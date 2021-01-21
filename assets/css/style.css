@@ -948,4 +948,7 @@ footer li {
   .review-inner p {
     padding: 30px;
   }
+  .vc-note .denta-specs {
+    margin: 0;
+  }
 }
