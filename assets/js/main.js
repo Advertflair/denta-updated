@@ -49,13 +49,13 @@ var reviewSlider = new Swiper(".review-slider", {
   },
   breakpoints: {
     640: {
-      slidesPerView: "1",
-      spaceBetween: 20,
-      autoplay: true,
-      navigation: {
-        nextEl: ".swiper-button-next-unique",
-        prevEl: ".swiper-button-prev-unique",
-      },
+      // slidesPerView: "1",
+      // spaceBetween: 20,
+      // autoplay: true,
+      // navigation: {
+      //   nextEl: ".swiper-button-next-unique",
+      //   prevEl: ".swiper-button-prev-unique",
+      // },
     },
     320: {
       slidesPerView: "1",
