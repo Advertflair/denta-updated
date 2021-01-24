@@ -36,6 +36,39 @@ function fixedHeader(e) {
 }
 window.addEventListener("scroll", fixedHeader);
 
+// Review Slider
+var reviewSlider = new Swiper(".review-slider", {
+  slidesPerView: "1.5",
+  centeredSlides: true,
+  spaceBetween: 50,
+  loop: true,
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+    640: {
+      slidesPerView: "1",
+      spaceBetween: 20,
+      autoplay: true,
+      navigation: {
+        nextEl: ".swiper-button-next-unique",
+        prevEl: ".swiper-button-prev-unique",
+      },
+    },
+    320: {
+      slidesPerView: "1",
+      spaceBetween: 20,
+      autoplay: true,
+      navigation: {
+        nextEl: ".swiper-button-next-unique",
+        prevEl: ".swiper-button-prev-unique",
+      },
+    },
+  },
+});
+
 // Talk, Speak, Dictate Slider
 let listItem = document.querySelectorAll(".tab-items li");
 let listItemActive = document.querySelector(".tab-items li.active");
@@ -65,49 +98,40 @@ let tabSlider = new Swiper(".tab-slider", {
   // },
 });
 
-// tabSlider.on("slideChange", function (innerMethods) {
-//   RemoveActive();
-//   let currentElement = listItem[innerMethods.activeIndex];
-//   currentElement.classList.add("active");
-//   setWidth(currentElement);
-// });
-// if (windowWidth <= 767) {
-//   tabSlider.destroy();
-// }
-// let allSwipersTab = document.querySelectorAll(".swiper-slide");
-// // Active Setters
-// setTimeout(() => {
-//   setWidth(listItemActive);
-// }, 500);
+tabSlider.on("slideChange", function (innerMethods) {
+  RemoveActive();
+  let currentElement = listItem[innerMethods.activeIndex];
+  currentElement.classList.add("active");
+  setWidth(currentElement);
+});
 
-// function selectItem(e, index) {
-//   RemoveActive();
-//   e.target.classList.add("active");
-//   tabSlider.slideTo(index);
-//   setWidth(e.target);
-// }
-// // Remove Active
-// function RemoveActive() {
-//   listItem.forEach((item) => {
-//     item.classList.remove("active");
-//   });
-// }
-// listItem.forEach((item, index) => {
-//   item.addEventListener("click", function (e) {
-//     selectItem(e, index);
-//   });
-// });
+let allSwipersTab = document.querySelectorAll(".swiper-slide");
+// Active Setters
+setTimeout(() => {
+  setWidth(listItemActive);
+}, 500);
 
-// // Tab Slider Fix
-// let tbSlider = document.querySelector(".section-3 .tab-slider");
-// let sliderFix = tbSlider.offsetTop;
-// window.addEventListener("scroll", () => {
-//   if (tbSlider.classList.contains("aos-animate")) {
-//     setTimeout(() => {
-//       tbSlider.classList.add("action-play");
-//     }, 3000);
-//   }
-// });
+function selectItem(e, index) {
+  RemoveActive();
+  e.target.classList.add("active");
+  tabSlider.slideTo(index);
+  setWidth(e.target);
+}
+// Remove Active
+function RemoveActive() {
+  listItem.forEach((item) => {
+    item.classList.remove("active");
+  });
+}
+listItem.forEach((item, index) => {
+  item.addEventListener("click", function (e) {
+    selectItem(e, index);
+  });
+});
+
+if ($(window).width() <= 991) {
+  tabSlider.destroy();
+}
 
 // Accordion
 let accordionTab = $(".accordion .accordion-title");
@@ -141,31 +165,4 @@ $(".close img").click(function () {
   $(".video-overlay").fadeOut();
   $(`.popup-container[data-id = "${videoData}"]`).fadeOut();
   $(`.popup-container[data-id = "${videoData}"] .denta-video`).get(0).pause();
-});
-
-// Review Slider
-var reviewSlider = new Swiper(".review-slider", {
-  slidesPerView: "1.5",
-  centeredSlides: true,
-  spaceBetween: 50,
-  loop: true,
-
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  breakpoints: {
-    640: {
-      slidesPerView: "1.5",
-    },
-    320: {
-      slidesPerView: "1",
-      spaceBetween: 20,
-      autoplay: true,
-      navigation: {
-        nextEl: ".swiper-button-next-unique",
-        prevEl: ".swiper-button-prev-unique",
-      },
-    },
-  },
 });
