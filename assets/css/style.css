@@ -414,6 +414,7 @@ padding:0 70px;
 }
 footer {
   background: #1f2734;
+      padding: 90px 70px !important;
 }
 footer .col {
   flex-basis: 20%;
