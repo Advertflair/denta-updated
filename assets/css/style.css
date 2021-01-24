@@ -307,6 +307,9 @@ nav .btn:hover {
 .perio-col {
   padding: 80px 0;
 }
+.extraSpace {
+ padding:80px 0;
+}
 .overlay {
   display: none;
 }
