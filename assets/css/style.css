@@ -345,7 +345,9 @@ nav .btn:hover {
   align-items: center;
 }
 /*  */
-
+.section-3{
+padding:0 70px;
+}
 .section-3 h1 {
   margin: 0 0 20px 0;
 }
