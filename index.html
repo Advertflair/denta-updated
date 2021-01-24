@@ -104,6 +104,39 @@
           </div>
         </div>
       </div>
+      <svg
+        class="hero-waves"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28 "
+        preserveAspectRatio="none"
+      >
+        <defs>
+          <path
+            id="wave-path"
+            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+          ></path>
+        </defs>
+        <g class="wave1">
+          <use
+            xlink:href="#wave-path"
+            x="50"
+            y="3"
+            fill="rgba(255,255,255, .1)"
+          ></use>
+        </g>
+        <g class="wave2">
+          <use
+            xlink:href="#wave-path"
+            x="50"
+            y="0"
+            fill="rgba(255,255,255, .2)"
+          ></use>
+        </g>
+        <g class="wave3">
+          <use xlink:href="#wave-path" x="50" y="9" fill="#fff"></use>
+        </g>
+      </svg>
     </div>
     <!-- Header Ends -->
     <!-- Video Popup -->
@@ -128,7 +161,7 @@
 
     <!--  -->
     <!-- Section 2 Starts -->
-    <section class="text-center section-2 section-spacing pt-0">
+    <section class="text-center section-2 section-spacing">
       <div class="container">
         <h1>
           Works With Your Open Dental<br />
@@ -138,7 +171,7 @@
           Denta is fully integrated with Open Dental. All your voice notes,
           charting<br />
           and procedures are stored right into your practice management<br />
-          system with no additional typing effort
+          system with no additional typing effort.
         </p>
         <!-- Swiper -->
         <div class="open-dental-overall">
@@ -165,7 +198,7 @@
           rest to Denta.<br />
           Denta’s AI engine takes into account the context and intent of your
           voice instructions<br />
-          and delivers exceptional speed and precision
+          and delivers exceptional speed and precision.
         </p>
 
         <div class="perio-col d-flex">
@@ -180,7 +213,7 @@
             <h2>Periodontal Exam</h2>
             <p>
               Hygenists can perform periodontal exam<br />
-              in under 5 minutes without any assistance
+              in under 5 minutes without any assistance.
             </p>
           </div>
           <div class="denta-specs">
@@ -238,17 +271,17 @@
             <div class="swiper-slide">
               <div class="review-inner">
                 <p>
-                  Wow! Great product that will help any dentist chart and write
-                  notes more effectively and efficiently. A one stop shop for
-                  generating accurate notes, referrals and insurance narratives
-                  in a fraction of the time
+                  First impressions—Wow! Great product that will help any
+                  dentist chart and write notes more effectively and
+                  efficiently. A one stop shop for generating accurate notes,
+                  referrals and insurance narratives in a fraction of the time.
                 </p>
                 <div class="d-flex align-center">
                   <figure>
                     <img src="./assets/images/person-1.png" alt="" />
                   </figure>
                   <div class="content">
-                    <h5>Dr. Wiseworth, DDS?Dallas</h5>
+                    <h5>Dr. Wiseworth, DDS</h5>
                   </div>
                 </div>
               </div>
@@ -256,17 +289,17 @@
             <div class="swiper-slide">
               <div class="review-inner">
                 <p>
-                  Wow! Great product that will help any dentist chart and write
-                  notes more effectively and efficiently. A one stop shop for
-                  generating accurate notes, referrals and insurance narratives
-                  in a fraction of the time
+                  Voice Dental is a very compelling product. It will
+                  dramatically reduce my time for perio-charting, and all post
+                  post-procedure documentation, giving me more time to spend
+                  with my patients or see new ones.
                 </p>
                 <div class="d-flex align-center">
                   <figure>
-                    <img src="./assets/images/person-1.png" alt="" />
+                    <img src="./assets/images/person-2.png" alt="" />
                   </figure>
                   <div class="content">
-                    <h5>Dr. Wiseworth, DDS?Dallas</h5>
+                    <h5>Dr. Kalluri, DDS</h5>
                   </div>
                 </div>
               </div>
@@ -274,17 +307,15 @@
             <div class="swiper-slide">
               <div class="review-inner">
                 <p>
-                  Wow! Great product that will help any dentist chart and write
-                  notes more effectively and efficiently. A one stop shop for
-                  generating accurate notes, referrals and insurance narratives
-                  in a fraction of the time
+                  What a neat product! This is a much needed solution for any
+                  Dental office.
                 </p>
                 <div class="d-flex align-center">
                   <figure>
-                    <img src="./assets/images/person-1.png" alt="" />
+                    <img src="./assets/images/person-3.png" alt="" />
                   </figure>
                   <div class="content">
-                    <h5>Dr. Wiseworth, DDS?Dallas</h5>
+                    <h5>Paige, Dental Assistant</h5>
                   </div>
                 </div>
               </div>
@@ -349,5 +380,25 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./assets/js/lib/swiper.min.js"></script>
     <script src="./assets/js/main.js"></script>
+    <script>
+      // Product Videos
+      $(".video-btn").click(function () {
+        var videoData = $(this).data("id");
+        $(".video-overlay").fadeToggle();
+        $(`.popup-container[data-id = "${videoData}"]`).fadeToggle();
+        $(`.popup-container[data-id = "${videoData}"] .denta-video`)
+          .get(0)
+          .play();
+      });
+
+      $(".close img").click(function () {
+        var videoData = $(this).data("id");
+        $(".video-overlay").fadeOut();
+        $(`.popup-container[data-id = "${videoData}"]`).fadeOut();
+        $(`.popup-container[data-id = "${videoData}"] .denta-video`)
+          .get(0)
+          .pause();
+      });
+    </script>
   </body>
 </html>
