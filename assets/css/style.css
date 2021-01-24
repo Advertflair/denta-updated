@@ -934,7 +934,7 @@ footer li:last-child {
     flex-direction: column;
   }
   .banner .d-flex {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
   .banner figure {
     transform: none !important;
