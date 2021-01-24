@@ -788,10 +788,10 @@ footer li:last-child {
 .review-slider .swiper-button-prev,
 .unique-btn {
   color: #1f2734;
-  background: #ffffff;
+ 
   padding: 35px;
   border-radius: 50px;
-  box-shadow: 0 5px 10px 0 rgba(27, 45, 69, 0.1);
+ 
 }
 .review-slider .swiper-button-prev,
 .review-slider .swiper-container-rtl .swiper-button-next {
@@ -812,9 +812,7 @@ footer li:last-child {
 .swiper-container-rtl .swiper-button-prev:after {
   font-size: 22px;
 }
-.perio-col:last-child {
-  padding-bottom: 0;
-}
+
 .section-4 {
   position: relative;
 }
